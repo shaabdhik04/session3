@@ -32,10 +32,19 @@ This is a crowdfunding platform for games with a developer theme. The applicatio
 - When adding new functionality, make sure you update the README
 - Make sure all guidance in the Copilot Instructions file is updated with any relevant changes, including to project structure and scripts, and programming guidance
 
+### Commenting and documentation standards
+
+- Comment intent, not mechanics. Explain why a decision exists, the trade-off in play, or the reasoning behind a non-obvious implementation; do not restate what the code already says.
+- Remove stale or redundant comments in the same change that edits the related code.
+- Exported functions in `db/` and `src/lib/` must include TSDoc/JSDoc describing the purpose, parameters, and return value.
+- Reusable `.astro` components should document their `Props` interfaces so the contract is clear to contributors and tooling.
+
 ### Code formatting requirements
 
 - Use TypeScript with explicit types for function parameters and return values, especially in the data layer (`db/`, `src/lib/`)
+- Prefer consistent TypeScript formatting: semicolons, single quotes for strings, trailing commas in multiline objects/arrays, and import grouping by external vs local modules
 - Frontend code (TypeScript, Astro) must pass ESLint checks (`npm run lint`)
+- Keep comments and docs current; if a comment no longer matches the code, update or delete it
 
 ### Data Layer Patterns (Drizzle + Node SQLite)
 

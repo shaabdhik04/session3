@@ -57,6 +57,17 @@ npm run db:export     # write the seeded catalog to db/catalog.json
 > [!NOTE]
 > Seeding is idempotent — it skips games that already exist (matched by title) rather than reconciling changed rows. CI always starts from a clean database, so it reflects `games.csv` exactly. Locally, if you edit or remove rows in `games.csv`, delete `tailspin.db` and re-run `npm run db:setup` to fully regenerate.
 
+## Coding standards and documentation
+
+The project-level guidance lives in [`.github/copilot-instructions.md`](.github/copilot-instructions.md). The more detailed implementation rules are in the instruction files under [`.github/instructions/`](.github/instructions/):
+
+- [Astro component patterns](.github/instructions/astro.instructions.md)
+- [Drizzle + Node SQLite conventions](.github/instructions/drizzle.instructions.md)
+- [Unit test expectations](.github/instructions/unit-tests.instructions.md)
+- [Tailwind styling rules](.github/instructions/style.instructions.md)
+
+The shared standard is: comment the intent and trade-offs, document exported functions and component props clearly, keep comments current, and let ESLint enforce the code-quality rules we can check automatically.
+
 ## Running tests
 
 ```bash

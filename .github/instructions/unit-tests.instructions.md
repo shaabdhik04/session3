@@ -19,6 +19,13 @@ Unit tests run with **Vitest** (`npm run test:unit`). They cover the two highest
 - Name pattern: `<module>.test.ts`.
 - Use `describe('<module / function>')` blocks and `it('does X when Y')` cases.
 - Add type annotations on helpers and fixtures — this codebase requires explicit types.
+- Keep comments and test descriptions focused on intent and expected behavior; avoid restating code or repeating obvious assertions in prose.
+
+## TypeScript and formatting expectations
+
+- Prefer explicit TypeScript types for values, helper return types, and test fixtures in the repo.
+- Match the project's existing style: semicolons, single-quoted strings, multiline object/array formatting, and grouped imports.
+- ESLint enforces the safety-critical style checks for the project, including unused-variable conventions; other formatting choices are documented conventions, not a substitute for code clarity.
 
 ## Testing Pure Transforms
 
